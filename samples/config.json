@@ -1,0 +1,10 @@
+{
+    "rootPath": "path/to/your/project",
+    "ignoreDirs": [
+        "folder/to/ignore/relative/to/rootPath",
+        "file/to/ignore/relative/to/rootPath"
+    ],
+    "crudJsonFile": "path/to/crud/json/file",
+    "flowJsonFile": "path/to/flow/json/file",
+    "outputFile": "path/to/csv/output/file"
+}
