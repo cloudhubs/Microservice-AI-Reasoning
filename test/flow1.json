@@ -1,0 +1,119 @@
+{
+    "msController": {
+        "msId": {
+            "path": "/ts-admin-user-service/src/main/java/adminuser/controller/AdminUserController.java",
+            "directoryName": "/ts-admin-user-service/src/main/java/adminuser"
+        },
+        "classId": "adminuser.controller.AdminUserController",
+        "packageName": "adminuser.controller",
+        "className": "AdminUserController",
+        "role": "CONTROLLER"
+    },
+    "msControllerMethod": {
+        "msId": {
+            "path": "/ts-admin-user-service/src/main/java/adminuser/controller/AdminUserController.java",
+            "directoryName": "/ts-admin-user-service/src/main/java/adminuser"
+        },
+        "returnType": "HttpEntity",
+        "methodName": "updateUser",
+        "className": "AdminUserController",
+        "packageName": "adminuser.controller",
+        "methodId": "adminuser.controller.AdminUserController.updateUser",
+        "classId": "adminuser.controller.AdminUserController",
+        "line": 37,
+        "msArgumentList": [
+            {
+                "returnType": "UserDto"
+            },
+            {
+                "returnType": "HttpHeaders"
+            }
+        ],
+        "msAnnotations": [
+            {
+                "isHttpAnnotation": false,
+                "annotationName": "PutMapping"
+            }
+        ]
+    },
+    "msServiceMethodCall": {
+        "msId": {
+            "path": "/ts-admin-user-service/src/main/java/adminuser/controller/AdminUserController.java",
+            "directoryName": "/ts-admin-user-service/src/main/java/adminuser"
+        },
+        "parentPackageName": "adminuser.controller",
+        "parentClassName": "AdminUserController",
+        "parentMethodName": "updateUser",
+        "parentClassId": "adminuser.controller.AdminUserController",
+        "lineNumber": 40,
+        "calledMethodName": "updateUser",
+        "calledServiceId": "adminUserService",
+        "statementDeclaration": "adminUserService.updateUser(userDto, headers)"
+    },
+    "msControllerServiceField": {
+        "msId": {
+            "path": "/ts-admin-user-service/src/main/java/adminuser/controller/AdminUserController.java",
+            "directoryName": "/ts-admin-user-service/src/main/java/adminuser"
+        },
+        "fieldClass": "AdminUserService",
+        "fieldVariable": "adminUserService",
+        "parentMethod": {
+            "parentClassName": "AdminUserController",
+            "parentPackageName": "adminuser.controller"
+        },
+        "line": 21
+    },
+    "msService": {
+        "msId": {
+            "path": "/ts-admin-user-service/src/main/java/adminuser/service/AdminUserServiceImpl.java",
+            "directoryName": "/ts-admin-user-service/src/main/java/adminuser"
+        },
+        "classId": "adminuser.service.AdminUserServiceImpl",
+        "packageName": "adminuser.service",
+        "className": "AdminUserServiceImpl",
+        "role": "SERVICE"
+    },
+    "msServiceMethod": {
+        "msId": {
+            "path": "/ts-admin-user-service/src/main/java/adminuser/service/AdminUserServiceImpl.java",
+            "directoryName": "/ts-admin-user-service/src/main/java/adminuser"
+        },
+        "returnType": "Response",
+        "methodName": "updateUser",
+        "className": "AdminUserServiceImpl",
+        "packageName": "adminuser.service",
+        "methodId": "adminuser.service.AdminUserServiceImpl.updateUser",
+        "classId": "adminuser.service.AdminUserServiceImpl",
+        "line": 66,
+        "msArgumentList": [
+            {
+                "returnType": "UserDto"
+            },
+            {
+                "returnType": "HttpHeaders"
+            }
+        ],
+        "msAnnotations": [
+            {
+                "isHttpAnnotation": false,
+                "annotationName": "Override"
+            }
+        ]
+    },
+    "msRestCalls": [
+        {
+            "httpMethod": "PUT",
+            "returnType": "requestEntity",
+            "msId": {
+                "path": "/ts-admin-user-service/src/main/java/adminuser/service/AdminUserServiceImpl.java",
+                "directoryName": "/ts-admin-user-service/src/main/java/adminuser"
+            },
+            "parentPackageName": "adminuser.service",
+            "parentClassName": "AdminUserServiceImpl",
+            "parentMethodName": "updateUser",
+            "parentClassId": "adminuser.service.AdminUserServiceImpl",
+            "lineNumber": 70,
+            "statementDeclaration": "restTemplate.exchange(USER_SERVICE_IP_URI, HttpMethod.PUT, requestEntity, Response.class)"
+        }
+    ]
+}

@@ -1,0 +1,120 @@
+{
+    "msController": {
+        "msId": {
+            "path": "/ts-admin-user-service/src/main/java/adminuser/controller/AdminUserController.java",
+            "directoryName": "/ts-admin-user-service/src/main/java/adminuser"
+        },
+        "classId": "adminuser.controller.AdminUserController",
+        "packageName": "adminuser.controller",
+        "className": "AdminUserController",
+        "role": "CONTROLLER"
+    },
+    "msControllerMethod": {
+        "msId": {
+            "path": "/ts-admin-user-service/src/main/java/adminuser/controller/AdminUserController.java",
+            "directoryName": "/ts-admin-user-service/src/main/java/adminuser"
+        },
+        "returnType": "HttpEntity",
+        "methodName": "addUser",
+        "className": "AdminUserController",
+        "packageName": "adminuser.controller",
+        "methodId": "adminuser.controller.AdminUserController.addUser",
+        "classId": "adminuser.controller.AdminUserController",
+        "line": 44,
+        "msArgumentList": [
+            {
+                "returnType": "UserDto"
+            },
+            {
+                "returnType": "HttpHeaders"
+            }
+        ],
+        "msAnnotations": [
+            {
+                "isHttpAnnotation": false,
+                "annotationName": "PostMapping"
+            }
+        ]
+    },
+    "msServiceMethodCall": {
+        "msId": {
+            "path": "/ts-admin-user-service/src/main/java/adminuser/controller/AdminUserController.java",
+            "directoryName": "/ts-admin-user-service/src/main/java/adminuser"
+        },
+        "parentPackageName": "adminuser.controller",
+        "parentClassName": "AdminUserController",
+        "parentMethodName": "addUser",
+        "parentClassId": "adminuser.controller.AdminUserController",
+        "lineNumber": 47,
+        "calledMethodName": "addUser",
+        "calledServiceId": "adminUserService",
+        "statementDeclaration": "adminUserService.addUser(userDto, headers)"
+    },
+    "msControllerServiceField": {
+        "msId": {
+            "path": "/ts-admin-user-service/src/main/java/adminuser/controller/AdminUserController.java",
+            "directoryName": "/ts-admin-user-service/src/main/java/adminuser"
+        },
+        "fieldClass": "AdminUserService",
+        "fieldVariable": "adminUserService",
+        "parentMethod": {
+            "parentClassName": "AdminUserController",
+            "parentPackageName": "adminuser.controller"
+        },
+        "line": 21
+    },
+    "msService": {
+        "msId": {
+            "path": "/ts-admin-user-service/src/main/java/adminuser/service/AdminUserServiceImpl.java",
+            "directoryName": "/ts-admin-user-service/src/main/java/adminuser"
+        },
+        "classId": "adminuser.service.AdminUserServiceImpl",
+        "packageName": "adminuser.service",
+        "className": "AdminUserServiceImpl",
+        "role": "SERVICE"
+    },
+    "msServiceMethod": {
+        "msId": {
+            "path": "/ts-admin-user-service/src/main/java/adminuser/service/AdminUserServiceImpl.java",
+            "directoryName": "/ts-admin-user-service/src/main/java/adminuser"
+        },
+        "returnType": "Response",
+        "methodName": "addUser",
+        "className": "AdminUserServiceImpl",
+        "packageName": "adminuser.service",
+        "methodId": "adminuser.service.AdminUserServiceImpl.addUser",
+        "classId": "adminuser.service.AdminUserServiceImpl",
+        "line": 85,
+        "msArgumentList": [
+            {
+                "returnType": "UserDto"
+            },
+            {
+                "returnType": "HttpHeaders"
+            }
+        ],
+        "msAnnotations": [
+            {
+                "isHttpAnnotation": false,
+                "annotationName": "Override"
+            }
+        ]
+    },
+    "msRestCalls": [
+        {
+            "api": "USER_SERVICE_IP_URI + \"/register\"",
+            "httpMethod": "POST",
+            "returnType": "User",
+            "msId": {
+                "path": "/ts-admin-user-service/src/main/java/adminuser/service/AdminUserServiceImpl.java",
+                "directoryName": "/ts-admin-user-service/src/main/java/adminuser"
+            },
+            "parentPackageName": "adminuser.service",
+            "parentClassName": "AdminUserServiceImpl",
+            "parentMethodName": "addUser",
+            "parentClassId": "adminuser.service.AdminUserServiceImpl",
+            "lineNumber": 89,
+            "statementDeclaration": "restTemplate.exchange(USER_SERVICE_IP_URI + \"/register\", HttpMethod.POST, requestEntity, new ParameterizedTypeReference<Response<User>>() {\n})"
+        }
+    ]
+}
