@@ -128,7 +128,18 @@ class MsMethod(FlowMSObject):
 
 
 class MsControllerMethod(MsMethod):
-    pass
+    HTTP_TYPE_JAVA_ANNOTATIONS = {
+        "GetMapping": "GET",
+        "PostMapping": "POST",
+        "PutMapping": "PUT",
+        "DeleteMapping": "DELETE",
+    }
+
+    def find_http_type(self):
+        for annotation in self.annotations:
+            if annotation.annotation_name in self.HTTP_TYPE_JAVA_ANNOTATIONS:
+                return self.HTTP_TYPE_JAVA_ANNOTATIONS[annotation.annotation_name]
+        return None
 
 
 class MsServiceMethod(MsMethod):
