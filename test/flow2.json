@@ -1,94 +1,96 @@
 {
     "msController": {
         "msId": {
-            "path": "/ts-admin-user-service/src/main/java/adminuser/controller/AdminUserController.java",
-            "directoryName": "/ts-admin-user-service/src/main/java/adminuser"
+            "path": "/ts-contacts-service/src/main/java/contacts/controller/ContactsController.java",
+            "directoryName": "/ts-contacts-service/src/main/java/contacts"
         },
-        "classId": "adminuser.controller.AdminUserController",
-        "packageName": "adminuser.controller",
-        "className": "AdminUserController",
+        "classId": "contacts.controller.ContactsController",
+        "packageName": "contacts.controller",
+        "className": "ContactsController",
         "role": "CONTROLLER"
     },
     "msControllerMethod": {
         "msId": {
-            "path": "/ts-admin-user-service/src/main/java/adminuser/controller/AdminUserController.java",
-            "directoryName": "/ts-admin-user-service/src/main/java/adminuser"
+            "path": "/ts-contacts-service/src/main/java/contacts/controller/ContactsController.java",
+            "directoryName": "/ts-contacts-service/src/main/java/contacts"
         },
         "returnType": "HttpEntity",
-        "methodName": "addUser",
-        "className": "AdminUserController",
-        "packageName": "adminuser.controller",
-        "methodId": "adminuser.controller.AdminUserController.addUser",
-        "classId": "adminuser.controller.AdminUserController",
-        "line": 44,
+        "methodName": "getAllContacts",
+        "className": "ContactsController",
+        "packageName": "contacts.controller",
+        "methodId": "contacts.controller.ContactsController.getAllContacts",
+        "classId": "contacts.controller.ContactsController",
+        "line": 34,
         "msArgumentList": [
-            {
-                "returnType": "UserDto"
-            },
             {
                 "returnType": "HttpHeaders"
             }
         ],
         "msAnnotations": [
             {
-                "isHttpAnnotation": false,
-                "annotationName": "PostMapping"
+                "isHttpAnnotation": true,
+                "annotationName": "CrossOrigin",
+                "key": "origins",
+                "value": "\"*\""
+            },
+            {
+                "isHttpAnnotation": true,
+                "annotationName": "GetMapping",
+                "key": "path",
+                "value": "\"/contacts\""
             }
         ]
     },
     "msServiceMethodCall": {
         "msId": {
-            "path": "/ts-admin-user-service/src/main/java/adminuser/controller/AdminUserController.java",
-            "directoryName": "/ts-admin-user-service/src/main/java/adminuser"
+            "path": "/ts-contacts-service/src/main/java/contacts/controller/ContactsController.java",
+            "directoryName": "/ts-contacts-service/src/main/java/contacts"
         },
-        "parentPackageName": "adminuser.controller",
-        "parentClassName": "AdminUserController",
-        "parentMethodName": "addUser",
-        "parentClassId": "adminuser.controller.AdminUserController",
-        "lineNumber": 47,
-        "calledMethodName": "addUser",
-        "calledServiceId": "adminUserService",
-        "statementDeclaration": "adminUserService.addUser(userDto, headers)"
+        "parentPackageName": "contacts.controller",
+        "parentClassName": "ContactsController",
+        "parentMethodName": "getAllContacts",
+        "parentClassId": "contacts.controller.ContactsController",
+        "lineNumber": 38,
+        "calledMethodName": "getAllContacts",
+        "calledServiceId": "contactsService",
+        "statementDeclaration": "contactsService.getAllContacts(headers)"
     },
     "msControllerServiceField": {
         "msId": {
-            "path": "/ts-admin-user-service/src/main/java/adminuser/controller/AdminUserController.java",
-            "directoryName": "/ts-admin-user-service/src/main/java/adminuser"
+            "path": "/ts-contacts-service/src/main/java/contacts/controller/ContactsController.java",
+            "directoryName": "/ts-contacts-service/src/main/java/contacts"
         },
-        "fieldClass": "AdminUserService",
-        "fieldVariable": "adminUserService",
+        "fieldClass": "ContactsService",
+        "fieldVariable": "contactsService",
         "parentMethod": {
-            "parentClassName": "AdminUserController",
-            "parentPackageName": "adminuser.controller"
+            "parentClassName": "ContactsController",
+            "parentPackageName": "contacts.controller"
         },
-        "line": 21
+        "line": 24
     },
     "msService": {
         "msId": {
-            "path": "/ts-admin-user-service/src/main/java/adminuser/service/AdminUserServiceImpl.java",
-            "directoryName": "/ts-admin-user-service/src/main/java/adminuser"
+            "path": "/ts-contacts-service/src/main/java/contacts/service/ContactsServiceImpl.java",
+            "directoryName": "/ts-contacts-service/src/main/java/contacts"
         },
-        "classId": "adminuser.service.AdminUserServiceImpl",
-        "packageName": "adminuser.service",
-        "className": "AdminUserServiceImpl",
+        "classId": "contacts.service.ContactsServiceImpl",
+        "packageName": "contacts.service",
+        "className": "ContactsServiceImpl",
         "role": "SERVICE"
     },
     "msServiceMethod": {
         "msId": {
-            "path": "/ts-admin-user-service/src/main/java/adminuser/service/AdminUserServiceImpl.java",
-            "directoryName": "/ts-admin-user-service/src/main/java/adminuser"
+            "path": "/ts-contacts-service/src/main/java/contacts/service/ContactsServiceImpl.java",
+            "directoryName": "/ts-contacts-service/src/main/java/contacts"
         },
         "returnType": "Response",
-        "methodName": "addUser",
-        "className": "AdminUserServiceImpl",
-        "packageName": "adminuser.service",
-        "methodId": "adminuser.service.AdminUserServiceImpl.addUser",
-        "classId": "adminuser.service.AdminUserServiceImpl",
-        "line": 85,
+        "methodName": "getAllContacts",
+        "className": "ContactsServiceImpl",
+        "packageName": "contacts.service",
+        "methodId": "contacts.service.ContactsServiceImpl.getAllContacts",
+        "classId": "contacts.service.ContactsServiceImpl",
+        "line": 115,
         "msArgumentList": [
-            {
-                "returnType": "UserDto"
-            },
             {
                 "returnType": "HttpHeaders"
             }
@@ -100,21 +102,62 @@
             }
         ]
     },
-    "msRestCalls": [
-        {
-            "api": "USER_SERVICE_IP_URI + \"/register\"",
-            "httpMethod": "POST",
-            "returnType": "User",
-            "msId": {
-                "path": "/ts-admin-user-service/src/main/java/adminuser/service/AdminUserServiceImpl.java",
-                "directoryName": "/ts-admin-user-service/src/main/java/adminuser"
-            },
-            "parentPackageName": "adminuser.service",
-            "parentClassName": "AdminUserServiceImpl",
-            "parentMethodName": "addUser",
-            "parentClassId": "adminuser.service.AdminUserServiceImpl",
-            "lineNumber": 89,
-            "statementDeclaration": "restTemplate.exchange(USER_SERVICE_IP_URI + \"/register\", HttpMethod.POST, requestEntity, new ParameterizedTypeReference<Response<User>>() {\n})"
-        }
-    ]
+    "msRepositoryMethodCall": {
+        "msId": {
+            "path": "/ts-contacts-service/src/main/java/contacts/service/ContactsServiceImpl.java",
+            "directoryName": "/ts-contacts-service/src/main/java/contacts"
+        },
+        "parentPackageName": "contacts.service",
+        "parentClassName": "ContactsServiceImpl",
+        "parentMethodName": "getAllContacts",
+        "parentClassId": "contacts.service.ContactsServiceImpl",
+        "lineNumber": 117,
+        "calledMethodName": "findAll",
+        "calledServiceId": "contactsRepository",
+        "statementDeclaration": "contactsRepository.findAll()"
+    },
+    "msServiceRepositoryField": {
+        "msId": {
+            "path": "/ts-contacts-service/src/main/java/contacts/service/ContactsServiceImpl.java",
+            "directoryName": "/ts-contacts-service/src/main/java/contacts"
+        },
+        "fieldClass": "ContactsRepository",
+        "fieldVariable": "contactsRepository",
+        "parentMethod": {
+            "parentClassName": "ContactsServiceImpl",
+            "parentPackageName": "contacts.service"
+        },
+        "line": 22
+    },
+    "msRepository": {
+        "msId": {
+            "path": "/ts-contacts-service/src/main/java/contacts/repository/ContactsRepository.java",
+            "directoryName": "/ts-contacts-service/src/main/java/contacts"
+        },
+        "classId": "contacts.repository.ContactsRepository",
+        "packageName": "contacts.repository",
+        "className": "ContactsRepository",
+        "role": "REPOSITORY"
+    },
+    "msRestCalls": [],
+    "msRepositoryMethod": {
+        "msId": {
+            "path": "/ts-contacts-service/src/main/java/contacts/repository/ContactsRepository.java",
+            "directoryName": "/ts-contacts-service/src/main/java/contacts"
+        },
+        "returnType": "ArrayList<Contacts>",
+        "methodName": "findAll",
+        "className": "ContactsRepository",
+        "packageName": "contacts.repository",
+        "methodId": "contacts.repository.ContactsRepository.findAll",
+        "classId": "contacts.repository.ContactsRepository",
+        "line": 46,
+        "msArgumentList": [],
+        "msAnnotations": [
+            {
+                "isHttpAnnotation": false,
+                "annotationName": "Override"
+            }
+        ]
+    }
 }

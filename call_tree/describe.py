@@ -77,6 +77,9 @@ class DescribeFlowVisitorV1:
 
     @when(MsRestCalls)
     def visit(self, node: MsRestCalls):
+        if len(node.calls) == 0:
+            return
+
         rest_calls_msgs = []
         for rest_call in node.calls:
             target_endpoint = rest_call.api

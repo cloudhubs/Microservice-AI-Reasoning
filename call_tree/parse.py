@@ -10,7 +10,7 @@ MAP_FLOW_TYPE = {
     "msServiceMethodCall": MsServiceMethodCall,
     "msRepositoryMethodCall": MsRepositoryMethodCall,
     "msControllerServiceField": MsControllerServiceField,
-    "msControllerRepositoryField": MsServiceRepositoryField,
+    "msServiceRepositoryField": MsServiceRepositoryField,
     "msRestCalls": MsRestCalls,
 }
 

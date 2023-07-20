@@ -1,20 +1,22 @@
-from call_tree.parse import parse_flow_v1
+import json
+
+import fire
+
 from call_tree.describe import DescribeFlowVisitorV1
+from call_tree.parse import parse_flow_v1
+
+
+def main(flow_file: str, output_file: str):
+    with open(flow_file, "r") as f:
+        flow_json = json.load(f)
+    flow = parse_flow_v1(flow_json)
+    visitor = DescribeFlowVisitorV1()
+    for node in flow:
+        visitor.visit(node)
+
+    with open(output_file, "w") as f:
+        f.write(visitor.message)
+
 
 if __name__ == "__main__":
-    import json
-
-    with open("test/flow1.json") as f:
-        flow1_json = json.load(f)
-
-    with open("test/flow2.json") as f:
-        flow2_json = json.load(f)
-
-    flow1 = parse_flow_v1(flow1_json)
-    flow2 = parse_flow_v1(flow2_json)
-
-    describe_visitor = DescribeFlowVisitorV1()
-    for node in flow1:
-        describe_visitor.visit(node)
-
-    print(describe_visitor.message)
+    fire.Fire(main)

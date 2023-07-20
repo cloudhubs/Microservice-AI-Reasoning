@@ -1,0 +1,34 @@
+{
+    "msController": {
+        "msId": {
+            "path": "/ts-contacts-service/src/main/java/contacts/controller/ContactsController.java",
+            "directoryName": "/ts-contacts-service/src/main/java/contacts"
+        },
+        "classId": "contacts.controller.ContactsController",
+        "packageName": "contacts.controller",
+        "className": "ContactsController",
+        "role": "CONTROLLER"
+    },
+    "msControllerMethod": {
+        "msId": {
+            "path": "/ts-contacts-service/src/main/java/contacts/controller/ContactsController.java",
+            "directoryName": "/ts-contacts-service/src/main/java/contacts"
+        },
+        "returnType": "String",
+        "methodName": "home",
+        "className": "ContactsController",
+        "packageName": "contacts.controller",
+        "methodId": "contacts.controller.ContactsController.home",
+        "classId": "contacts.controller.ContactsController",
+        "line": 29,
+        "msArgumentList": [],
+        "msAnnotations": [
+            {
+                "isHttpAnnotation": true,
+                "annotationName": "GetMapping",
+                "key": "path",
+                "value": "\"/contacts/welcome\""
+            }
+        ]
+    }
+}
