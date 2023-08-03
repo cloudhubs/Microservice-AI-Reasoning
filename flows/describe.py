@@ -1,5 +1,5 @@
 from utils.visitor import *
-from call_tree.flow_types import *
+from flows.flow_types import *
 
 
 class DescribeFlowVisitorV1:
@@ -33,6 +33,9 @@ class DescribeFlowVisitorV1:
 
     @when(MsControllerMethod)
     def visit(self, node: MsControllerMethod):
+        if "controller" not in self._context:
+            self._context["controller"] = node.get_parent_class_copy()
+
         controller_name = self._context["controller"].class_name
         controller_method = node.method_name
         http_method_type = node.find_http_type()

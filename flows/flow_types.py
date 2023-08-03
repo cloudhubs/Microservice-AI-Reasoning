@@ -126,6 +126,15 @@ class MsMethod(FlowMSObject):
             [MsAnnotation.from_json(ann) for ann in json_dict["msAnnotations"]],
         )
 
+    @property
+    def parent_superclass(cls):
+        raise NotImplementedError()
+
+    def get_parent_class_copy(self):
+        return self.parent_superclass(
+            self.ms_id, self.class_id, self.package_name, self.class_name
+        )
+
 
 class MsControllerMethod(MsMethod):
     HTTP_TYPE_JAVA_ANNOTATIONS = {
@@ -133,6 +142,7 @@ class MsControllerMethod(MsMethod):
         "PostMapping": "POST",
         "PutMapping": "PUT",
         "DeleteMapping": "DELETE",
+        "PatchMapping": "PATCH",
     }
 
     def find_http_type(self):
@@ -141,13 +151,21 @@ class MsControllerMethod(MsMethod):
                 return self.HTTP_TYPE_JAVA_ANNOTATIONS[annotation.annotation_name]
         return None
 
+    @property
+    def parent_superclass(self):
+        return MsController
+
 
 class MsServiceMethod(MsMethod):
-    pass
+    @property
+    def parent_superclass(self):
+        return MsService
 
 
 class MsRepositoryMethod(MsMethod):
-    pass
+    @property
+    def parent_superclass(self):
+        return MsRepository
 
 
 class MsMethodCall(FlowMSObject):

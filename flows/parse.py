@@ -1,4 +1,4 @@
-from call_tree.flow_types import *
+from flows.flow_types import *
 
 MAP_FLOW_TYPE = {
     "msController": MsController,
