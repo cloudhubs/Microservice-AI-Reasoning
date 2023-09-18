@@ -1,4 +1,4 @@
-package edu.baylor.ecs.cloudhubs.Flow;
+package cloudhubs.Flow;
 
 import lombok.Data;
 

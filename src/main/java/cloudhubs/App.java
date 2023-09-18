@@ -1,4 +1,4 @@
-package edu.baylor.ecs.cloudhubs;
+package cloudhubs;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,8 +13,9 @@ import com.github.javaparser.ast.NodeList;
 import com.github.javaparser.ast.PackageDeclaration;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.javaparser.ast.body.MethodDeclaration;
-import edu.baylor.ecs.cloudhubs.services.CRUDService;
-import edu.baylor.ecs.cloudhubs.services.FlowService;
+
+import cloudhubs.services.CRUDService;
+import cloudhubs.services.FlowService;
 
 /**
  * Hello world!

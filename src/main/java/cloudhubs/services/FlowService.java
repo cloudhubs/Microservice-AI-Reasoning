@@ -1,4 +1,4 @@
-package edu.baylor.ecs.cloudhubs.services;
+package cloudhubs.services;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,12 +9,13 @@ import java.util.Map;
 import java.util.AbstractMap.SimpleEntry;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import edu.baylor.ecs.cloudhubs.MethodOutput;
-import edu.baylor.ecs.cloudhubs.Flow.FlowClass;
-import edu.baylor.ecs.cloudhubs.Flow.FlowField;
-import edu.baylor.ecs.cloudhubs.Flow.FlowMethod;
-import edu.baylor.ecs.cloudhubs.Flow.FlowMethodCall;
-import edu.baylor.ecs.cloudhubs.Flow.RestCall;
+
+import cloudhubs.MethodOutput;
+import cloudhubs.Flow.FlowClass;
+import cloudhubs.Flow.FlowField;
+import cloudhubs.Flow.FlowMethod;
+import cloudhubs.Flow.FlowMethodCall;
+import cloudhubs.Flow.RestCall;
 
 public class FlowService {
     private Map<String, List<SimpleEntry<String, Object>>> flowData;

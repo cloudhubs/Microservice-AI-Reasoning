@@ -1,4 +1,4 @@
-package edu.baylor.ecs.cloudhubs;
+package cloudhubs;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;

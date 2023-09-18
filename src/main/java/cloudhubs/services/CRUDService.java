@@ -1,12 +1,13 @@
-package edu.baylor.ecs.cloudhubs.services;
+package cloudhubs.services;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import edu.baylor.ecs.cloudhubs.CRUD;
-import edu.baylor.ecs.cloudhubs.MethodOutput;
+
+import cloudhubs.CRUD;
+import cloudhubs.MethodOutput;
 
 public class CRUDService {
     private Map<String, Map<String, CRUD>> crudData;
