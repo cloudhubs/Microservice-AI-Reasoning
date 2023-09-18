@@ -1,0 +1,9 @@
+{
+    "rootPath": "~/projects/train-ticket",
+    "ignoreDirs": [
+        "old-docs"
+    ],
+    "crudJsonFile": "CRUD_permissions.json",
+    "flowJsonFile": "Flows.json",
+    "outputFile": "output_0.1.0.csv"
+}
