@@ -19,8 +19,8 @@ def main(csv_file: str, output_file: str):
             writer.writeheader()
 
             for row in reader:
-                class_role, crud, flow = row["classRole"], row["crud"], row["flow"]
-                if class_role == "controller":
+                class_component_type, crud, flow = row["classComponentType"], row["crud"], row["flow"]
+                if class_component_type == "controller":
                     # Flow
                     flow_message = "There is no flow information available."
                     if flow:

@@ -9,7 +9,7 @@ public class MethodOutput {
     public String packageName;
 
     // controller, service, repository, other
-    public String classRole;
+    public String classComponentType;
 
     // interface, enum, annotation, class
     public String classDeclarationType;

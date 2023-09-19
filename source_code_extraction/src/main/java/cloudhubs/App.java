@@ -179,7 +179,7 @@ public final class App {
                     var output = new MethodOutput();
                     output.setClassName(className);
                     output.setPackageName(packageDeclaration.get().getNameAsString());
-                    output.setClassRole(classType);
+                    output.setClassComponentType(classType);
                     output.setClassDeclarationType(classDeclarationType);
                     output.setClassFilePath(filePath);
                     output.setClassModifiers(classModifiers);
