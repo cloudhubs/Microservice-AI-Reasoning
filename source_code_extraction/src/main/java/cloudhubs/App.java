@@ -3,8 +3,16 @@ package cloudhubs;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
+
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
+
 import org.apache.commons.io.FileUtils;
+import org.xml.sax.SAXException;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.csv.CsvMapper;
 import com.github.javaparser.StaticJavaParser;
@@ -92,6 +100,28 @@ public final class App {
         }
     }
 
+    static String getMicroserviceName(File sourceFile) {
+        String microserviceName = null;
+        while (sourceFile.getParentFile() != null) {
+            var parentFile = sourceFile.getParentFile();
+            var pomFile = Arrays.stream(parentFile.listFiles(x -> x.getName().equals("pom.xml"))).findFirst()
+                    .orElse(null);
+            if (pomFile != null) {
+                try {
+                    var pomFileContent = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(pomFile);
+                    microserviceName = pomFileContent.getElementsByTagName("artifactId").item(0).getTextContent();
+                } catch (SAXException | IOException | ParserConfigurationException e) {
+                    System.err.println("Error parsing pom.xml, microservice name cannot be detected");
+                    System.err.println(e.getMessage());
+                }
+                break;
+            }
+            sourceFile = sourceFile.getParentFile();
+        }
+
+        return microserviceName;
+    }
+
     /**
      * Says hello to the world.
      *
@@ -137,6 +167,7 @@ public final class App {
                 var filePath = file.getPath().replace(rootDir.getPath(), "").replace("\\", "/")
                 // .replaceFirst("^/", "")
                 ;
+                var microserviceName = getMicroserviceName(file);
 
                 for (var method : c.getMethods().stream().filter(
                         m -> !isGetMethod(m) && !isSetMethod(m) && !m.isConstructorDeclaration())
@@ -158,6 +189,7 @@ public final class App {
                     output.setMethodOffset(
                             method.getTokenRange().get().getBegin().getRange().get().begin
                                     .toString());
+                    output.setMicroserviceName(microserviceName);
 
                     outputs.add(output);
                 }

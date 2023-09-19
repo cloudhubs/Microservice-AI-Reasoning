@@ -30,6 +30,8 @@ public class MethodOutput {
     // The position in the file where the method starts, in the form of (line <l>,col <c>)
     public String methodOffset;
 
+    public String microserviceName;
+
     public String getSymbolId() {
         return this.packageName + "." + this.className + "." + this.methodName;
     }
