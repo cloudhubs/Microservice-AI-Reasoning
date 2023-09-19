@@ -4,3 +4,4 @@ output*.csv
 /config.json
 data
 dependency-reduced-pom.xml
+.idea
