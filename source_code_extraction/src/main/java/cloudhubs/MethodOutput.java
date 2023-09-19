@@ -28,7 +28,7 @@ public class MethodOutput {
     public String methodSourceCode;
 
     // The position in the file where the method starts, in the form of (line <l>,col <c>)
-    public String methodStartSourceCode;
+    public String methodOffset;
 
     public String getSymbolId() {
         return this.packageName + "." + this.className + "." + this.methodName;

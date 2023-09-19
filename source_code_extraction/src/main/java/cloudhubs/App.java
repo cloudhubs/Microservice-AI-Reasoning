@@ -155,7 +155,7 @@ public final class App {
                     output.setMethodName(methodName);
                     output.setMethodModifiers(methodModifiers);
                     output.setMethodSourceCode(methodSourceCode);
-                    output.setMethodStartSourceCode(
+                    output.setMethodOffset(
                             method.getTokenRange().get().getBegin().getRange().get().begin
                                     .toString());
 
