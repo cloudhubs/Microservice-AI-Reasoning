@@ -21,12 +21,11 @@ import cloudhubs.services.FlowService;
  * Hello world!
  */
 public final class App {
-    private App() {}
+    private App() {
+    }
 
     static String modifierToString(NodeList<Modifier> modifiers) {
-        var modifierString =
-                modifiers.toString().replaceFirst("^\\[", "").replaceFirst(" ?\\]$", "");
-        return modifierString;
+        return modifiers.toString().replaceFirst("^\\[", "").replaceFirst(" ?]$", "");
     }
 
     static String getClassRole(ClassOrInterfaceDeclaration c) {
@@ -59,14 +58,14 @@ public final class App {
     }
 
     static boolean isGetMethod(MethodDeclaration method) {
-        return method.getParameters().isEmpty() && method.getType().asString() != "void"
+        return method.getParameters().isEmpty() && !Objects.equals(method.getType().asString(), "void")
                 && (method.getNameAsString().startsWith("get")
                         || (method.getNameAsString().startsWith("is")
-                                && method.getType().asString() == "boolean"));
+                                && Objects.equals(method.getType().asString(), "boolean")));
     }
 
     static boolean isSetMethod(MethodDeclaration method) {
-        return method.getParameters().size() == 1 && method.getType().asString() == "void"
+        return method.getParameters().size() == 1 && Objects.equals(method.getType().asString(), "void")
                 && method.getNameAsString().startsWith("set");
     }
 
@@ -97,7 +96,6 @@ public final class App {
      * Says hello to the world.
      *
      * @param args The arguments of the program.
-     * @throws IOException
      */
     public static void main(String[] args) throws IOException {
         var configPath = "config.json";
