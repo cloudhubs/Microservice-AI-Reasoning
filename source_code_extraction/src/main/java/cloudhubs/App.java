@@ -109,8 +109,16 @@ public final class App {
             if (pomFile != null) {
                 try {
                     var pomFileContent = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(pomFile);
-                    microserviceName = pomFileContent.getElementsByTagName("artifactId").item(0).getTextContent();
-                } catch (SAXException | IOException | ParserConfigurationException e) {
+                    var possibleNames = pomFileContent.getElementsByTagName("artifactId");
+                    for (int i = 0; i < possibleNames.getLength(); i++) {
+                        var possibleName = possibleNames.item(i);
+                        if (possibleName.getParentNode().getNodeName() == "project" && possibleName.getParentNode()
+                                .getParentNode() == possibleName.getParentNode().getOwnerDocument()) {
+                            microserviceName = possibleName.getTextContent();
+                            break;
+                        }
+                    }
+                    } catch (SAXException | IOException | ParserConfigurationException e) {
                     System.err.println("Error parsing pom.xml, microservice name cannot be detected");
                     System.err.println(e.getMessage());
                 }
